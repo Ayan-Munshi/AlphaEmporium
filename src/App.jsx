@@ -1,5 +1,6 @@
-import './App.css'
 import { BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+import Header from './components/Header'
+
 function App() {
   
 
@@ -7,7 +8,7 @@ function App() {
     <>
     <Router>
       <Routes>
-       <Route path='/home' element={<h1>home compo</h1>}></Route>
+       <Route path='/' element={<h1 className='text-blue-500'><Header></Header></h1>}></Route>
         <Route path='/is' element={<h1>AlphaEmporium.</h1> } ></Route>
 
        
