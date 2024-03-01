@@ -24,33 +24,33 @@ function Header() {
           placeholder="Search items here..."
           className="  md:w-[300px] lg:w-[900px]  rounded-lg pl-2" //(for responsiveness) md for medium sized screen,lg means for large sized screen  
         />
-        <LuSearchCheck className="size-5 mt-1 ml-1  text-blue-500 hover:shadow-lg hover:text-green-500" />
+        <LuSearchCheck className="size-5 mt-1 ml-1  text-yellow-500 hover:shadow-lg hover:text-green-500" />
       </div>
-      <div id="nav-links" className="flex items-center justify-around text-white">
+      <div id="nav-links" className="flex items-center justify-around text-yellow-600">
 
         <Link to={"/orders"}>
          <div className="ml-2 mr-2">
-           <span className="shadow-lg hover:shadow-blue-500">
+           <span className="shadow-lg hover:shadow-yellow-300">
            Services
            </span>
          </div>
         </Link>
         <Link to={""}>
          <div className="ml-2 mr-2">
-           <span className="shadow-lg hover:shadow-blue-500">
+           <span className="shadow-lg hover:shadow-yellow-300">
             Products
            </span>
          </div>
         </Link>
         <Link>
          <div className="ml-2 mr-2">
-          <span className="shadow-lg hover:shadow-blue-500">
+          <span className="shadow-lg hover:shadow-yellow-300">
             Sign up
           </span>
          </div>
         </Link>
         <Link>
-        <div className="flex shadow-lg  hover:shadow-white text-white rounded-lg ml-3 ">
+        <div className="flex shadow-lg  hover:shadow-white text-yellow-300 rounded-lg ml-3 ">
         <PiShoppingCartSimpleBold className="size-5"/>
         <span className="shadow-lg hover:shadow-blue-500">
           0
