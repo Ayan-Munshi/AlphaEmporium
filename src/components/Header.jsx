@@ -2,8 +2,12 @@ import React from "react";
 import { LuSearchCheck } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { PiShoppingCartSimpleBold } from "react-icons/pi";
+import { useContext } from "react";
+import { Context } from "../Context-reducer";
 
 function Header() {
+  // const{initialstate}=useContext(Context)    // (just for testing perpous),taking out/unpacking the data(basket)  which was in initialstate from Context-reducer.jsx to use that basket data below 
+  // const {basket} = initialstate
   return (
     <nav
       id="nav-bar"
@@ -53,7 +57,7 @@ function Header() {
         <div className="flex shadow-lg  hover:shadow-white text-yellow-300 rounded-lg ml-3 ">
         <PiShoppingCartSimpleBold className="size-5"/>
         <span className="shadow-lg hover:shadow-blue-500">
-          0
+         {/* {basket.length} */} {/* using the basket data from initialstate which was in Context-reducer.jsx (destructured basket at the top of the page)*/}
         </span>
         </div>
         </Link>
