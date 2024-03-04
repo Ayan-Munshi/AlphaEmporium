@@ -7,19 +7,24 @@ function Product({ id, pname, image, price, rating }) {
 
   const cartbutton = () =>{     
    dispatch(              // sending all the data to the reducer func at context-reducer to perform further tasks
-    {type: "add to cart",
-     id:id , pname:pname  
+    {type:"add to cart",
+     items_info:{         // sending item's information because this will be usefull further and also will be useful in the add to cart feature 
+      id : id,
+      pname : pname,
+      price : price,
+      rating : rating
+     }  
   }
    )
   }
   return (
     <div
       id="main frame"
-      className="   m-[20px] justify-even max-h-[500px] max-1-[800px] shadow-lg shadow-yellow-300"
+      className="   m-[20px] justify-even max-h-[500px] max-1-[800px] shadow-lg shadow-yellow-300 rounded-2xl"
     >
       <div
         id="inner frame for glass finish"
-        className=" h-[300px] w-[200px]  rounded-lg border-[1px] border-yellow-200  backdrop-filter backdrop-blur-lg" // glass effect
+        className=" h-[300px] w-[200px]  rounded-2xl border-[1px] border-yellow-200  backdrop-filter backdrop-blur-sm" // glass effect
       >
         <div id="product-info" className="w-full text-yellow-400 mt-10 ">
           <center>

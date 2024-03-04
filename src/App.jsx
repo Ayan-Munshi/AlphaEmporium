@@ -1,7 +1,7 @@
 import { BrowserRouter as Router,Routes,Route} from 'react-router-dom'
-import Header from './components/Header'
 import Home from './components/Home'
 import { Contextprovider } from './Context-reducer'
+import Nav_bar from './components/Nav_bar'
 
 function App() {
   
@@ -12,7 +12,7 @@ function App() {
       <Routes>
        <Route path='/' element={
         <>
-       <Header/>
+       <Nav_bar/>
        <Home/>
        </>}>
         

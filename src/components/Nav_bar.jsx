@@ -5,9 +5,12 @@ import { PiShoppingCartSimpleBold } from "react-icons/pi";
 import { useContext } from "react";
 import { Context } from "../Context-reducer";
 
-function Header() {
-  // const{initialstate}=useContext(Context)    // (just for testing perpous),taking out/unpacking the data(basket)  which was in initialstate from Context-reducer.jsx to use that basket data below 
-  // const {basket} = initialstate
+function Nav_bar() {
+
+  const { container } = useContext(Context); //from the container we can access (cart),although cart is stored in initialstate, the initialstate can/will be accessed through (container)
+  const { cart } = container;
+
+  console.log(cart)
   return (
     <nav
       id="nav-bar"
@@ -58,6 +61,8 @@ function Header() {
         <PiShoppingCartSimpleBold className="size-5"/>
         <span className="shadow-lg hover:shadow-blue-500">
          {/* {basket.length} */} {/* using the basket data from initialstate which was in Context-reducer.jsx (destructured basket at the top of the page)*/}
+
+         {cart?.length}
         </span>
         </div>
         </Link>
@@ -67,4 +72,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Nav_bar;
