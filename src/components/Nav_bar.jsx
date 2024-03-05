@@ -56,7 +56,7 @@ function Nav_bar() {
           </span>
          </div>
         </Link>
-        <Link>
+        <Link to={"/checkout"}>
         <div className="flex shadow-lg  hover:shadow-white text-yellow-300 rounded-lg ml-3 ">
         <PiShoppingCartSimpleBold className="size-5"/>
         <span className="shadow-lg hover:shadow-blue-500">
