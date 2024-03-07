@@ -1,4 +1,3 @@
-
 import { createContext,useReducer } from 'react'
 
 const Context = createContext()
@@ -13,14 +12,29 @@ export const initialstate = {
 }
 const reducer = (state,action) => {
     console.log(action)
-    if(action.type ==="add to cart"){
+    if(action.type === "add to cart"){
        return{
         ...state,
         cart : [...state.cart, action.items_info]  // in the empty cart we are storing previous cart state and the new present items_info which came after clicking the Add to cart button
-       }
-       
+       } 
     }
-    return state
+    else if(action.type === "remove from cart"){
+     
+        let newcart = [...state.cart]
+        const index_num = state.cart.findIndex((cartitem) => cartitem.id === action.id ) // means find the index number of the element from state.cart array if/when [ any cart item's  id === action.id(came from remove from cart button)]
+        
+        if(index_num >= 0){
+          newcart.splice(index_num,1) // means delete 1 element and the start point will be the index number(index_num)
+
+        }else{
+            alert(`${action.id} this  product can't be deleted`)
+        }
+        return {
+            ...state,         // after all this return the all previous state but now the cart's value will newcart's value 
+            cart: newcart
+        }
+    }
+    return state    // at the end return state
 }
 
 const Contextprovider = ({children}) => {
