@@ -16,9 +16,9 @@ function Checkout_item_list({id,pname,price,rating,image}) {
   }
 
   return (
-    <div className='h-[300px] w-full  flex m-4 p-9 rounded-2xl '>
+    <div id='item list in checkout page' className='h-[300px] w-[full] flex  m-4 p-9 rounded-2xl  '>
         <img src={image} alt="" className='h-[250px] w-[450px] shadow-lg shadow-blue-500 rounded-xl' />
-        <div id='item details in checkout' className='m-9 h-[200px] w-[400px]'>
+        <div id='item details of product in checkout' className='m-9 h-[200px] w-[400px]'>
             <h1 className='text-[50px]'>{pname}</h1>
             <h1 className='text-green-400'>₹ {price}</h1>
             <h1 className="flex ml-1 ">
@@ -33,6 +33,7 @@ function Checkout_item_list({id,pname,price,rating,image}) {
             Remove from cart</button>
         </div>
     </div>
+    
   )
 }
 
