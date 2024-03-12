@@ -10,6 +10,13 @@ export const initialstate = {
     cart : [],
     user : null
 }
+
+//  exporting this func to import in Total_amount component to use.  ( for testing purposes )
+
+// export const total_amount_function = (cart) => {
+//     return cart?.reduce((p, item) => item.price + p, 0);  // calculation of total price in checkput box
+//   };
+
 const reducer = (state,action) => {
     console.log(action)
     if(action.type === "add to cart"){
@@ -24,7 +31,7 @@ const reducer = (state,action) => {
         const index_num = state.cart.findIndex((cartitem) => cartitem.id === action.id ) // means find the index number of the element from state.cart array if/when [ any cart item's  id === action.id(came from remove from cart button)]
         
         if(index_num >= 0){
-          newcart.splice(index_num,1) // means delete 1 element and the start point will be the index number(index_num)
+          newcart.splice(index_num , 1)  // means delete 1 element and the start point will be the index number(index_num)
 
         }else{
             alert(`${action.id} this  product can't be deleted`)

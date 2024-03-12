@@ -21,7 +21,7 @@ function Checkout_item_list({id,pname,price,rating,image}) {
         <div id='item details of product in checkout' className='m-9 h-[200px] w-[400px]'>
             <h1 className='text-[50px]'>{pname}</h1>
             <h1 className='text-green-400'>₹ {price}</h1>
-            <h1 className="flex ml-1 ">
+            <h1 className="flex ml-1 mt-2">
             {Array(rating)
               .fill()
               .map((_) => (
@@ -29,7 +29,7 @@ function Checkout_item_list({id,pname,price,rating,image}) {
               ))}
           </h1>
           <button onClick={removefromcartbutton} 
-          className='border-[1px] border-white rounded-xl p-2 hover:bg-green-400 hover:text-black shadow-lg shadow-blue-400'>
+          className='border-[1px] border-white rounded-xl p-2 hover:bg-green-400 hover:text-black shadow-lg shadow-blue-400 mt-2'>
             Remove from cart</button>
         </div>
     </div>

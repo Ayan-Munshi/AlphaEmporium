@@ -3,12 +3,18 @@ import Home from "./components/Home";
 import { Contextprovider } from "./Context-reducer";
 import Nav_bar from "./components/Nav_bar";
 import Checkout from "./components/Checkout"
+import Login from "./components/Login";
 
 function App() {
   return (
     <Contextprovider>
       <Router>
         <Routes>
+          <Route 
+          path="/login"
+          element = {<Login/>}
+          />
+
           <Route
             path="/checkout"
             element={
