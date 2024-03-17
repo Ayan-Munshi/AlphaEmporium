@@ -19,7 +19,7 @@ function Total_amount() {
       renderText={(value) => (   // this function is from predefine CurrencyFormat component
         <>
         <p>
-            subtotal amount of ({cart.length} items):<strong>{value}</strong>
+           total amount of ({cart.length} items):<strong>{value}</strong>
         </p>
         <br/>
         <small>

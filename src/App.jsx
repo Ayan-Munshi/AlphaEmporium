@@ -1,14 +1,19 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
-import { Contextprovider } from "./Context-reducer";
+import { Context, Contextprovider } from "./Context-reducer";
 import Nav_bar from "./components/Nav_bar";
 import Checkout from "./components/Checkout"
 import Login from "./components/Login";
+import { useContext } from "react";
+
 
 function App() {
+  const { container } = useContext(Context);
+  const { user } = container;
   return (
-    <Contextprovider>
-      <Router>
+    <>
+      {!user ? (<Login/>):(
+        <Router>
         <Routes>
           <Route 
           path="/login"
@@ -40,7 +45,8 @@ function App() {
           />
         </Routes>
       </Router>
-    </Contextprovider>
+      )}
+    </>
   );
 }
 

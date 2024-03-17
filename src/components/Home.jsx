@@ -20,7 +20,7 @@ function Home() {
         id="productZone1"
         className="flex flex-wrap mt-[-600px] ml-[100px]  "
       >
-        {" "}
+        
         {/*flex-wrap for responsiveness*/}
         <Product
           id="1"
