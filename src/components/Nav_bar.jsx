@@ -4,11 +4,23 @@ import { Link } from "react-router-dom";
 import { PiShoppingCartSimpleBold } from "react-icons/pi";
 import { useContext } from "react";
 import { Context } from "../Context-reducer";
+import { auth } from "../firebase";
 
 function Nav_bar() {
 
-  const { container } = useContext(Context); //from the container we can access (cart),although cart is stored in initialstate, the initialstate can/will be accessed through (container)
+  const { user,container } = useContext(Context); //from the container we can access (cart),although cart is stored in initialstate, the initialstate can/will be accessed through (container)
   const { cart } = container;
+  const sign_in_button_nav = () => {
+    
+    auth.signOut()
+      .then(() => {
+        alert("User signed out successfully.");
+      })
+      .catch((error) => {
+        console.error("Error signing out:", error);
+      });
+    
+  }
 
   console.log(cart)
   return (
@@ -42,6 +54,7 @@ function Nav_bar() {
            </span>
          </div>
         </Link>
+
         <Link to={""}>
          <div className="ml-2 mr-2">
            <span className="shadow-lg hover:shadow-yellow-300">
@@ -49,13 +62,18 @@ function Nav_bar() {
            </span>
          </div>
         </Link>
-        <Link>
-         <div className="ml-2 mr-2">
+        
+        <Link to={!user && "/login"} > {/** not working as written */}
+         <div 
+         onClick={sign_in_button_nav} // to sign out
+         className="ml-2 mr-2">
           <span className="shadow-lg hover:shadow-yellow-300">
-            Sign up
+            {!user? 'Sign Out' : 'Sign in'} {/** not working */}
           </span>
+          <span className="text-white">{user?.email}</span> {/** not working */}
          </div>
         </Link>
+
         <Link to={"/checkout"}>
         <div className="flex shadow-lg  hover:shadow-white text-yellow-300 rounded-lg ml-3 ">
         <PiShoppingCartSimpleBold className="size-5"/>
@@ -66,7 +84,7 @@ function Nav_bar() {
         </span>
         </div>
         </Link>
-
+       
       </div>
     </nav>
   );

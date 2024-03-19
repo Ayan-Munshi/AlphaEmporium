@@ -19,12 +19,20 @@ export const initialstate = {
 
 const reducer = (state,action) => {
     console.log(action)
-    if(action.type === "add to cart"){
+    if(action.type === "set user"){     //getting from App.jsx to set the user
+      return{
+        ...state,
+        user: action.user
+      }
+    }
+
+    else if(action.type === "add to cart"){
        return{
         ...state,
         cart : [...state.cart, action.items_info]  // in the empty cart we are storing previous cart state and the new present items_info which came after clicking the Add to cart button
        } 
     }
+
     else if(action.type === "remove from cart"){
      
         let newcart = [...state.cart]

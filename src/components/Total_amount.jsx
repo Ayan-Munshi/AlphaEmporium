@@ -19,7 +19,7 @@ function Total_amount() {
       renderText={(value) => (   // this function is from predefine CurrencyFormat component
         <>
         <p>
-           total amount of ({cart.length} items):<strong>{value}</strong>
+           total amount of ({cart.length} items): <h1 className='font-bold'>{value}</h1> {/* the sum amount*/}
         </p>
         <br/>
         <small>
